@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload – Go4Share</title>
+  <link rel="stylesheet" href="upload.css">
+</head>
+<style>
+    body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(145deg,#08121d,#0d2236);
+  color: #e4ecf7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 25px;
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+  background: linear-gradient(45deg,#4da8ff,#7ac6ff);
+  color: transparent;
+  background-clip: text;
+}
+
+.back-btn {
+  background: #4da8ff;
+  border: none;
+  color: #001321;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.upload-box {
+  margin-top: 60px;
+  background: rgba(255,255,255,0.04);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px #0b2b45;
+  text-align: center;
+  width: 90%;
+  max-width: 450px;
+}
+
+.upload-box h2 {
+  margin-bottom: 10px;
+  color: #b6d7ff;
+}
+
+.hint {
+  opacity: 0.8;
+  margin-bottom: 25px;
+}
+
+input[type="file"],
+input[type="text"] {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #0f2e48;
+  color: #d9e8ff;
+}
+
+.upload-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #4da8ff;
+  color: #001321;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#uploadStatus {
+  margin-top: 15px;
+  opacity: 0.8;
+}
+</style>
+<body>
+
+<header class="header">
+  <h1 class="logo">Go4Share</h1>
+  <button class="back-btn" onclick="goBack()">← Back</button>
+</header>
+
+<main class="upload-box">
+  <h2>Upload new video</h2>
+  <p class="hint">Share your creativity with the world</p>
+
+  <input type="file" id="videoFile" accept="video/*">
+  <input type="text" id="caption" placeholder="Write a short caption…">
+
+  <button class="upload-btn" onclick="uploadVideo()">Upload Video</button>
+
+  <p id="uploadStatus"></p>
+</main>
+
+<script src="upload.js"></script>
+</body>
+</html>

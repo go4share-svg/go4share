@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>X-Token Wallet – Go4Share</title>
+  <link rel="stylesheet" href="tokens.css" />
+</head>
+<style>
+    body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(145deg, #08121d, #0d2236);
+  color: #e4ecf7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 25px;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+  background: linear-gradient(45deg, #4da8ff, #7ac6ff);
+  color: transparent;
+  background-clip: text;
+}
+
+.back-btn {
+  background: #4da8ff;
+  border: none;
+  color: #001321;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.wallet-box {
+  margin-top: 60px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px #0b2b45;
+  text-align: center;
+  width: 90%;
+  max-width: 450px;
+}
+
+.wallet-box h2 {
+  color: #b6d7ff;
+  margin-bottom: 8px;
+}
+
+.hint {
+  opacity: 0.8;
+  margin-bottom: 25px;
+}
+
+.balance p {
+  margin: 8px 0;
+  font-size: 18px;
+}
+
+.actions,
+.payout {
+  margin-top: 30px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  background: #0f2e48;
+  color: #d9e8ff;
+  border: none;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.buy-btn,
+.payout-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  background: #4da8ff;
+  color: #001321;
+  cursor: pointer;
+}
+
+#payoutStatus {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+</style>
+<body>
+  <header class="header">
+    <h1 class="logo">Go4Share</h1>
+    <button class="back-btn" onclick="goBack()">← Back</button>
+  </header>
+
+  <main class="wallet-box">
+    <h2>X-Token Wallet</h2>
+    <p class="hint">Manage your tokens, earnings, and transactions.</p>
+
+    <div class="balance">
+      <p><strong>Your Tokens:</strong> <span id="tokenBalance">0</span> X</p>
+      <p><strong>Total Earnings:</strong> <span id="earnings">0</span> X</p>
+    </div>
+
+    <div class="actions">
+      <h3>Buy Tokens</h3>
+      <select id="buyAmount">
+        <option value="1">1 X (10 Kč)</option>
+        <option value="5">5 X (50 Kč)</option>
+        <option value="10">10 X (100 Kč)</option>
+      </select>
+      <button class="buy-btn" onclick="buyTokens()">Buy Now</button>
+    </div>
+
+    <div class="payout">
+      <h3>Request Payout</h3>
+      <p>Minimum 50 X = 500 Kč</p>
+      <button class="payout-btn" onclick="requestPayout()">Withdraw</button>
+      <p id="payoutStatus"></p>
+    </div>
+  </main>
+
+  <script src="tokens.js"></script>
+</body>
+</html>

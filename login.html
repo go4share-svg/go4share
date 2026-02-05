@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login – Go4Share</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<style>
+   body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(145deg,#08121d,#0d2236);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-box {
+    background: rgba(255,255,255,0.05);
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 0 25px #0b2b45;
+    text-align: center;
+    backdrop-filter: blur(15px);
+}
+
+.logo {
+    font-size: 40px;
+    font-weight: 800;
+    background: linear-gradient(45deg,#4da8ff,#7ac6ff);
+    color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    margin-bottom: 30px;
+    opacity: 0.75;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: none;
+    background: #0f2e48;
+    color: #d9e8ff;
+    font-size: 16px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background: #4da8ff;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #001321;
+    font-weight: 600;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.alt-link {
+    margin-top: 20px;
+    color: #8ebde8;
+}
+
+.alt-link a {
+    color: #4da8ff;
+}
+</style>
+<body>
+
+<div class="login-container">
+    <div class="login-box">
+        <h1 class="logo">Go4Share</h1>
+        <p class="subtitle">Welcome back. Let's share your world.</p>
+
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+
+        <button onclick="loginUser()" class="login-btn">Sign In</button>
+
+        <p class="alt-link">Don't have an account?
+            <a href="register.html">Create one</a>
+        </p>
+    </div>
+</div>
+
+<script src="login.js"></script>
+
+</body>
+</html>

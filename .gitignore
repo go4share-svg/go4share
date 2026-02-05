@@ -1,0 +1,15 @@
+.env
+.env.*
+
+node_modules/
+frontend/node_modules/
+
+server/uploads/
+server/uploads/videos/
+server/uploads/avatars/
+
+dist
+dist-ssr
+
+logs
+*.log

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go4Share – Feed</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<style>
+    body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(145deg,#08121d,#0d2236);
+    overflow-x: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    align-items: center;
+    backdrop-filter: blur(20px);
+    background: rgba(255,255,255,0.03);
+    border-bottom: 1px solid rgba(15, 9, 9, 0.08);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 900; 
+    background: linear-gradient(45deg,#4da8ff,#7ac6ff);
+    background-clip: text;
+    color: transparent;
+}
+
+.language-switcher select {
+    padding: 8px;
+    background: #0f2e48;
+    border: none;
+    color: #d9e8ff;
+    border-radius: 8px;
+}
+
+.feed {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 15px;
+}
+
+.video-card {
+    background: rgba(255,255,255,0.04);
+    border-radius: 15px;
+    padding: 15px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 20px #0b2b45;
+}
+
+.video-card video {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.user-info {
+    color: #c4dbf7;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.actions button {
+    background: #4da8ff;
+    border: none;
+    color: #001321;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.bottom-menu {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 0;
+    backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.bottom-menu button {
+    background: #4da8ff;
+    border: none;
+    color: #001321;
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+}
+</style>
+<body>
+
+<div class="header">
+    <h1 class="logo">Go4Share</h1>
+
+    <div class="language-switcher">
+        <select id="langSelect" onchange="changeLanguage()">
+            <option value="en">EN</option>
+            <option value="cs">CZ</option>
+            <option value="de">DE</option>
+            <option value="fr">FR</option>
+            <option value="pl">PL</option>
+            <option value="es">ES</option>
+            <option value="it">IT</option>
+            <option value="ru">RU</option>
+            <option value="zh">中文</option>
+        </select>
+    </div>
+</div>
+
+<div id="feed" class="feed"></div>
+
+<div class="bottom-menu">
+    <button onclick="goUpload()">Upload</button>
+    <button onclick="goTokens()">X-Tokens</button>
+    <button onclick="logout()">Logout</button>
+</div>
+
+<script src="feed.js"></script>
+</body>
+</html>
