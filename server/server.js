@@ -66,6 +66,7 @@ app.post(
 
 app.use(express.json());
 
+app.get("/", (req, res) => {  res.json({ status: "OK", service: "go4share-api" });});
 // ✅ Middleware
 app.use(cors({
   origin: ["http://localhost:5173", "http://10.63.125.124:5173", "http://10.224.62.124:5173"],
