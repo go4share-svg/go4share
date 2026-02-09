@@ -134,5 +134,19 @@ router.post("/react", async (req, res) => {
   }
 });
 
+// ROUTER DELETE MESSAGES //
+router.delete("/between/:user1/:user2", async (req,res) => { 
+try { 
+const { user1, user2 }= req.params;
+await Message.deleteMany({$or: [
+{ sender: user1, receiver: user2 }, { sender: user2, receiver:user1 }]
+});
+res.status(200).json({ message: "Messages between users deleted" });
+} catch (err) {
+console.error("DELETE BETWEEN ERROR:", err);
+res.status(500).json({ error:
+"Failed to delete messages" });
+}
+});
 
 export default router;
